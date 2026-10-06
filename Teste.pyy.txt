@@ -1,0 +1,41 @@
+Python
+# ============================================
+# TRABALHO AV1 - ENGENHARIA DE SOFTWARE
+# Aluno: Levi Neves
+# Aplicação: Gerenciador de Tarefas de Estudo
+# ============================================
+
+def menu():
+    print("\n--- GERENCIADOR DE TAREFAS ---")
+    print("1 - Adicionar tarefa")
+    print("2 - Listar tarefas")
+    print("3 - Sair")
+
+def main():
+    tarefas = []
+    
+    while True:
+        menu()
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            nova_tarefa = input("Digite a descrição da tarefa: ")
+            tarefas.append(nova_tarefa)
+            print("-> Tarefa adicionada com sucesso!")
+            
+        elif opcao == "2":
+            print("\n--- SUAS TAREFAS ---")
+            if not tarefas:
+                print("Nenhuma tarefa cadastrada.")
+            else:
+                for i, t in enumerate(tarefas, 1):
+                    print(f"{i}. {t}")
+                    
+        elif opcao == "3":
+            print("Encerrando o programa. Bons estudos!")
+            break
+        else:
+            print("Opção inválida, tente novamente.")
+
+if __name__ == "__main__":
+    main()
